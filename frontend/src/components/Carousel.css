@@ -1,0 +1,25 @@
+/* .carousel-item{
+  
+} */
+.bg-picture{
+  /* content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* filter: opacity(0.5); */
+  /* filter: blur(1px); */
+  /* opacity: 0.5; */
+  z-index:-1;
+  height:40vh;
+  object-fit: cover;
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  
+  /* background-position: center; */
+}
