@@ -1,0 +1,17 @@
+
+nav.navbar{
+  position: absolute;
+  top: 0;
+    width: 100%;
+    z-index:1;
+}
+.title-text{
+  font-size: 15px;
+}
+.col-logo{
+  text-align: center;
+}
+.col-logo > img{
+  width:50px; 
+  height:50px;
+}
