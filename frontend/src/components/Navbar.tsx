@@ -1,5 +1,6 @@
 import {Navbar as NavbarBs, Nav, Container, Row,Col} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './Navbar.css' 
 
@@ -10,7 +11,7 @@ const Navbar = () => {
      
         <Row className="ms-4">
           <Col className="col-logo">
-            <img src="/tokyoya_logo.png"></img>
+            <img src="/tokyoya_logo.png"/>
             <h1 className="title-text">TOKYOYA</h1>
           </Col>
         </Row>
