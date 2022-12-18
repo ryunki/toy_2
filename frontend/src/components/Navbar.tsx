@@ -11,6 +11,7 @@ const Navbar = () => {
      
         <Row className="ms-4">
           <Col className="col-logo">
+            <img src="/tokyoya_logo_white.png"/>
             <img src="/tokyoya_logo.png"/>
             <h1 className="title-text">TOKYOYA</h1>
           </Col>
