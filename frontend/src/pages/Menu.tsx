@@ -2,7 +2,7 @@
 
 const Menu = () => {
   return (
-    <div>Menu</div>
+    <h1>Menu</h1>
   )
 }
 
