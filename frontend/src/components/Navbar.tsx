@@ -14,8 +14,7 @@ const Navbar = () => {
     <NavbarBs className="bg-light navbar shadow-sm mb-3">
         <Row className="ms-4">
           <Col className="col-logo" onClick={clickHandler}>
-            {/* <img src="/tokyoya_logo_white.png"/> */}
-              <img src="/tokyoya_logo.png" style={{width:"50px",height:"50px"}}/>
+              <img className="nav-logo" src="/tokyoya_logo.png"/>
               <h1 className="title-text">TOKYOYA</h1>
           </Col>
         </Row>
