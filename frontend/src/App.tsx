@@ -19,7 +19,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <CarouselFade/>
       <Navbar/>
       <Container className="mb-4" >
         <Routes>
