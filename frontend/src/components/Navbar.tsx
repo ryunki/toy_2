@@ -14,7 +14,7 @@ const Navbar = () => {
     <NavbarBs className="bg-light navbar shadow-sm mb-3">
         <Row className="ms-4">
           <Col className="col-logo" onClick={clickHandler}>
-              <img className="nav-logo" src="/tokyoya_logo.png"/>
+              <img className="nav-logo" src="/tokyoya_logo_black.png"/>
               <h1 className="title-text">TOKYOYA</h1>
           </Col>
         </Row>
