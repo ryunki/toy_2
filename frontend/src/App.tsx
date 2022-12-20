@@ -12,23 +12,27 @@ import About from './pages/About';
 
 import './App.css';
 
-import { Container } from 'react-bootstrap';
-import CarouselFade from './components/CarouselFade';
+// import { Container } from 'react-bootstrap';
+// import CarouselFade from './components/CarouselFade';
 import Footer from './components/Footer';
+// import Login from './pages/Login';
+// import Register from './pages/Register';
 
 function App() {
   return (
     <>
       <Navbar/>
-      <Container className="mb-4" >
+      {/* <Container className="mb-4" > */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} /> */}
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
-      </Container>
+      {/* </Container> */}
       <Footer/>
     </>
   

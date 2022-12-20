@@ -25,7 +25,8 @@ const Footer = () => {
               <ul>
                 <li>BTS Tokyoya Sushi & Bulgogi</li>
                 <li>Louisenstraße 115 61348 Bad Homburg before the heigh</li>
-                <li>soonwonkang@gmail.com Tel: 0160.9822.7444</li>
+                <li>soonwonkang@gmail.com</li>
+                <li>Tel: 0160 9822 7444</li>
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 item">

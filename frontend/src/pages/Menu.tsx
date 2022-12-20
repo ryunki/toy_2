@@ -1,8 +1,8 @@
-
+import {Container} from 'react-bootstrap'
 
 const Menu = () => {
   return (
-    <h1>Menu</h1>
+    <Container>Menu</Container>
   )
 }
 
