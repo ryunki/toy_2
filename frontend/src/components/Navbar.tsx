@@ -1,47 +1,36 @@
-import {Navbar as NavbarBs, Nav, Container, Row, Col} from "react-bootstrap"
-import { NavLink, useNavigate } from "react-router-dom"
+import { Navbar as NavbarBs, Nav, Container, Row, Col } from 'react-bootstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import './Navbar.css' 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './Navbar.css';
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const clickHandler = ()=>{
-    navigate('/')
-}
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate('/');
+  };
   return (
     // <NavbarBs className="bg-white shadow-sm mb-3">
-    <NavbarBs className="bg-light navbar shadow-sm mb-3">
-        <Row className="ms-4">
-          <Col className="col-logo" onClick={clickHandler}>
-              <img className="nav-logo" src="/tokyoya_logo_black.png"/>
-              <h1 className="title-text">TOKYOYA</h1>
-          </Col>
-        </Row>
-     
-      <Row className="ms-auto me-auto">
-        <Col>
-          <Nav>
-            <Nav.Link to="/" as={NavLink}>
-              Home 
-            </Nav.Link>
-            <Nav.Link to="/menu" as={NavLink}>
-              Menu
-            </Nav.Link>
-            <Nav.Link to="/about" as={NavLink}>
-              About
-            </Nav.Link>
-            <Nav.Link to="/contact" as={NavLink}>
-              Contact
-            </Nav.Link>
-          </Nav>
+    <NavbarBs className="navbar-bs shadow-sm">
+      <Row>
+        <Col className="col-logo" onClick={clickHandler}>
+          <img className="nav-logo" src="/tokyoya_logo_black.png" />
+          <p className="logo-title">TOKYOYA</p>
         </Col>
-      {/* </Col> */}
-        </Row>
-        
+      </Row>
+
+      {/* <Row className="navbar-text"> */}
+          <Nav className="navbar-wrapper navbar-text">
+              <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
+              <Nav.Link to="/menu" as={NavLink}> Menu</Nav.Link>
+              <Nav.Link to="/about" as={NavLink}> About</Nav.Link>
+              <Nav.Link to="/contact" as={NavLink}>Contact</Nav.Link>
+          </Nav>
+      {/* </Row> */}
+
       {/* </Container> */}
     </NavbarBs>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

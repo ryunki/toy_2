@@ -1,12 +1,26 @@
-
-nav.navbar{
-  /* position: absolute; */
-  /* top: 0;
-    width: 100%;
-    z-index:1; */
+nav.navbar-bs{
+  justify-content: space-between;
 }
-.title-text{
+nav.navbar > div {
+  margin:0;
+}
+.navbar-wrapper{
+  justify-content: space-evenly;
+    width: 60vw;
+}
+.navbar-text{
+  letter-spacing: .25em;
+  text-transform: uppercase;
+    color: #001c58;
+    font-size: 11px;
+    line-height: 2.273em;
+}
+.logo-title{
+  font-family: "Cormorant Garamond",serif;
   font-size: 15px;
+  margin: auto;
+  color: #001c58;
+  letter-spacing: .2em;
 }
 .col-logo{
   text-align: center;
