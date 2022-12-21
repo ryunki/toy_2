@@ -1,3 +1,4 @@
+
 nav.navbar-bs{
   justify-content: space-between;
 }
@@ -11,7 +12,7 @@ nav.navbar > div {
 .navbar-text{
   letter-spacing: .25em;
   text-transform: uppercase;
-    color: #001c58;
+    /* color: #001c58; */
     font-size: 11px;
     line-height: 2.273em;
 }
@@ -30,6 +31,50 @@ nav.navbar > div {
   width:50px;
   height:50px;
 }
+.nav-link:hover{
+  transform:scale(1.1);
+  transition:all 0.3s ease-in;
+}
+.nav-link:not(hover){
+  transition:all 1s ease-out;
+}
+.nav-link:hover div.nav-line{
+  background:linear-gradient(to right, #001c58, grey, white);
+  width:100%;
+  height:1%;
+  opacity:1;
+  transform:translateY(0px);
+  transition:all 0.7s ease-in;
+}
+.nav-link:not(hover) div.nav-line{
+  background:linear-gradient(to right, #001c58, grey, white);
+  width:0%;
+  height:1%;
+  transform:translateY(3px);
+  transition:all 0.3s ease-out;
+  opacity:0;
+}
+
+/* when clicking */
+.nav-link:active{ 
+  transform:scale(1);
+}
+/* when selected */
+.nav-link.active{
+  transform:scale(1.1);
+  color:rgb(2, 30, 134) !important;
+}
+.nav-link.active div.nav-line{
+  /* background-color:black; */
+  background:linear-gradient(to right, #001c58, grey, white);
+  width:100%;
+  height:1%;
+  opacity:1;
+  transform:translateY(0px);
+  /* filter:blur(1px) */
+}
+
+
 /* .col-logo > img{
   width:50px; 
   height:50px;

@@ -11,7 +11,7 @@ const Navbar = () => {
   };
   return (
     // <NavbarBs className="bg-white shadow-sm mb-3">
-    <NavbarBs className="navbar-bs shadow-sm">
+    <NavbarBs className="navbar-bs shadow-sm ps-4">
       <Row>
         <Col className="col-logo" onClick={clickHandler}>
           <img className="nav-logo" src="/tokyoya_logo_black.png" />
@@ -21,10 +21,10 @@ const Navbar = () => {
 
       {/* <Row className="navbar-text"> */}
           <Nav className="navbar-wrapper navbar-text">
-              <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
-              <Nav.Link to="/menu" as={NavLink}> Menu</Nav.Link>
-              <Nav.Link to="/about" as={NavLink}> About</Nav.Link>
-              <Nav.Link to="/contact" as={NavLink}>Contact</Nav.Link>
+              <Nav.Link to="/" as={NavLink} className="nav-hover">Home <div className="nav-line"/></Nav.Link>
+              <Nav.Link to="/menu" as={NavLink} className="nav-hover"> Menu <div className="nav-line"/></Nav.Link>
+              <Nav.Link to="/about" as={NavLink} className="nav-hover"> About <div className="nav-line"/></Nav.Link>
+              <Nav.Link to="/contact" as={NavLink} className="nav-hover">Contact <div className="nav-line"/></Nav.Link>
           </Nav>
       {/* </Row> */}
 
