@@ -31,8 +31,14 @@ function CarouselFade() {
     }
  },[])
 const imgUrl = [
-  "/background.jpg",
-  "/background2.jpg",
+  // "/background.jpg",
+  // "/background2.jpg",
+  "/sushi/plate/sushi1.png",
+  "/sushi/plate/sushi2.png",
+  "/sushi/plate/sushi3.png",
+  "/sushi/plate/sushi4.png",
+  "/sushi/plate/sushi5.png",
+  "/sushi/plate/sushi6.png"
 ]
 
   return (
@@ -44,12 +50,12 @@ const imgUrl = [
         <Carousel.Item key={idx}>
           <div
             className="d-block w-100 bg-picture"
-            style={{backgroundImage: `url(${item})`, backgroundPositionY:y}}
+            style={{backgroundImage: `url(${item})`, backgroundPositionY:y-150}}
           />
-          <Carousel.Caption>
+          {/* <Carousel.Caption>
             <h3>{idx} slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
       ))}
     </Carousel>

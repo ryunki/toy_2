@@ -21,8 +21,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
+      {/* <div className="bg-store"> */}
       <Navbar/>
-      {/* <Container className="mb-4" > */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/register" element={<Register />} /> */}
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
-      {/* </Container> */}
+      {/* </div> */}
       <Footer/>
     </>
   

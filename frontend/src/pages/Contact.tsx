@@ -5,7 +5,7 @@ import './Contact.css'
 const Contact = () => {
   return (
     <>
-        <Row className="justify-content-lg-center contact-row">
+        <Row className="justify-content-lg-center contact-row mx-0">
           <Col className="me-lg-4" lg={5} sm={12}>
               <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d602.3457998228718!2d8.622816399670064!3d50.223715014719346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd07bd59524b7b%3A0x66786841bf27cfa4!2sLouisenstra%C3%9Fe%20115%2C%2061348%20Bad%20Homburg%20vor%20der%20H%C3%B6he%2C%20Germany!5e0!3m2!1sen!2skr!4v1671373605137!5m2!1sen!2skr"

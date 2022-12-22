@@ -1,0 +1,9 @@
+.bg-store{
+  /* background:green; */
+  background-image: url('../public/store/store.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  z-index:-10;
+}

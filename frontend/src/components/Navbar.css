@@ -6,8 +6,9 @@ nav.navbar > div {
   margin:0;
 }
 .navbar-wrapper{
-  justify-content: space-evenly;
-    width: 60vw;
+  justify-content: center;
+  /* justify-content: space-evenly; */
+    width: 100%;
 }
 .navbar-text{
   letter-spacing: .25em;
@@ -26,6 +27,7 @@ nav.navbar > div {
 .col-logo{
   text-align: center;
   cursor: pointer;
+  /* width:120px; */
 }
 .nav-logo{
   width:50px;
@@ -37,6 +39,14 @@ nav.navbar > div {
 }
 .nav-link:not(hover){
   transition:all 1s ease-out;
+}
+.nav-hover{
+  margin-inline: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .nav-hover{
+    margin-inline: 0.2rem;
+  }
 }
 .nav-link:hover div.nav-line{
   background:linear-gradient(to right, #001c58, grey, white);

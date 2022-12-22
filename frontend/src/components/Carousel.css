@@ -12,13 +12,14 @@
 }
 .bg-picture {
   z-index: -1;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color:rgb(72, 72, 72);
+
+  /* background-color:rgb(72, 72, 72); */
   /* transition: transform 2030ms ease-in-out; */
 }
 a.carousel-control-prev, a.carousel-control-next{

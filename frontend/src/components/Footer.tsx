@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="row justify-content-center">
             <div className="col-sm-4 col-md-3 item">
               <div className="mb-2" style={{textAlign: "center"}}>
-                <img src="/tokyoya_logo_white.png"/>
+                <img className="footer-logo" src="/tokyoya_logo_white.png"/>
               </div>
               <ul>
                 <li>
