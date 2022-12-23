@@ -7,6 +7,12 @@ body{
     background-color: #fffefc;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    
+    /* background-image: url('../public/background_pattern_4.png'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center;
+    background-size: contain; */
+
 }
 .container{
   margin-top: 2rem;

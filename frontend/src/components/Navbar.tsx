@@ -20,7 +20,7 @@ const Navbar = () => {
       {/* </Row> */}
 
       {/* <Row className="navbar-text"> */}
-      <Col sm={8} fluid className="px-0" style={{alignSelf: "center"}}>
+      <Col sm={8} className="px-0" style={{alignSelf: "center"}}>
           <Nav className="navbar-wrapper navbar-text">
               <Nav.Link to="/" as={NavLink} className="nav-hover">Home <div className="nav-line"/></Nav.Link>
               <Nav.Link to="/menu" as={NavLink} className="nav-hover"> Menu <div className="nav-line"/></Nav.Link>

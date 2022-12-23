@@ -36,7 +36,6 @@
 .row .col-contents-blur-effect{
     position: absolute;
     top: 0px;
-    -webkit-appearance: none;
     box-shadow: inset 0px 0px 3px 3px white; 
     -webkit-box-shadow: inset 0px 0px 3px 3px white; 
   -moz-box-shadow: inset 0px 0px 3px 3px white; 
