@@ -21,13 +21,26 @@ function CarouselFade() {
   // const ref = useRef<HTMLDivElement>("")
 
   function handleScroll() {
-    setY(-window.scrollY/2) //negative: makes image move slower upwards
+    setY(window.scrollY) //negative: makes image move slower upwards
+    console.log(-window.scrollY)
+  }
+  function handleTextOverlay() {
+    const title1 = document.querySelectorAll('.car-text-overlay.title-1')
+    const title2 = document.querySelectorAll('.car-text-overlay.title-2')
+    title1.forEach(el=>{
+      el.classList.toggle('show')
+    })
+    title2.forEach(el=>{
+      el.classList.toggle('show')
+    })
   }
 
   useEffect(()=>{
    window.addEventListener("scroll", handleScroll)
+   handleTextOverlay()
     return ()=>{
       window.removeEventListener("scroll", handleScroll)
+      // window.removeEventListener("load", handleTextOverlay)
     }
  },[])
 const imgUrl = [
@@ -47,15 +60,19 @@ const imgUrl = [
         style={{backgroundImage: `url(${imgUrl[0]})`, backgroundPositionY:y}}/> */}
     <Carousel fade interval={2000}>
       {imgUrl.map((item, idx)=>(
-        <Carousel.Item key={idx}>
-          <div
-            className="d-block w-100 bg-picture"
-            style={{backgroundImage: `url(${item})`, backgroundPositionY:y-150}}
+        <Carousel.Item key={idx} style={{display:"flex"}}>
+          
+          <img src={imgUrl[idx]}
+            className="bg-picture"
           />
-          {/* <Carousel.Caption>
-            <h3>{idx} slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption> */}
+          {/* <div
+            className="bg-picture"
+            style={{backgroundImage: `url(${item})`, backgroundPositionY:y/100+"vw"}}
+          /> */}
+          <Carousel.Caption className="title-overlay-wrapper">
+            <h1 className="car-text-overlay title-1">Tokyoya</h1>
+            <p className="car-text-overlay title-2">sushi & bulgogi</p>
+          </Carousel.Caption>
         </Carousel.Item>
       ))}
     </Carousel>
