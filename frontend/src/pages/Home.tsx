@@ -1,13 +1,41 @@
+
 import { Container, Row, Col } from 'react-bootstrap';
-// import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState, useRef} from 'react'
 
 import CarouselFade from '../components/CarouselFade';
 // import useIntersectionObsever from '../components/useIntersectionObserver';
 import './Home.css';
 
 const Home = () => {
-  // const ref = useRef<HTMLDivElement>(null)
-  // const observer = useRef<IntersectionObserver>()
+  // window.addEventListener('load', (event)=>{  //because it wont detect element after refresh
+  //   const elemsAll = document.querySelectorAll('.home-sushi-picture')
+  //   const effectEl = document.querySelectorAll('.col-contents-blur-effect')
+  //   const obs =  new ResizeObserver(changes => {
+  //       console.log("changes: ",changes )
+  //       changes.map((change,idx)=>{
+  //           effectEl[idx].style.height = change.contentRect.height+"px"
+  //           effectEl[idx].style.width = change.contentRect.width+"px"
+  //       })
+  //     })
+  //   elemsAll.forEach(elem=>{
+  //     obs.observe(elem)
+  //   })
+  // })
+  // const effectEl: HTMLElement | null
+  // const elemsAll: HTMLElement | null
+  useEffect(()=>{
+    const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
+    const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
+    const obs =  new ResizeObserver(changes => {
+        changes.map((change,idx)=>{
+            effectEl[idx].style.height = change.contentRect.height+"px"
+            effectEl[idx].style.width = change.contentRect.width+"px"
+        })
+      })
+    elemsAll.forEach(elem=>{
+      obs.observe(elem)
+    })
+  },[])
 
   const option={
     threshold:1, //100% of the element must be on the screen to trigger the "entries" function
@@ -15,10 +43,8 @@ const Home = () => {
   }
   window.addEventListener('scroll', (event)=>{
     const rows = document.querySelectorAll('.home-row')
-    // })
     const observer = new IntersectionObserver((entries)=>{
           entries.forEach(entry=>{
-            // console.log(entry)
             entry.target.classList.toggle("show", entry.intersectionRatio === 1)
             // this stops observing the elements that were once observed
             if(entry.isIntersecting) observer.unobserve(entry.target) 
@@ -33,55 +59,73 @@ const Home = () => {
     <>
       <CarouselFade />
       <Container className="mb-0 pb-5">
-        <h1 className="text-center">Tokyoya Sushi & Bulgogi</h1>
+        {/* <h1 className="text-center">Tokyoya Sushi & Bulgogi</h1> */}
         <h4 className="home-semi-title text-center">
           Do you love sushi? Then Tokyoya is the place for you!
         </h4>
         <Row className="home-row">
-          <Col>
-          <p>
-            We believe that great sushi comes not only from top-quality
-            ingredients, but also from a passionate, sincere and Tokyoya Sushi
-            chef who puts their all into preparing each dish.
-          </p>
-          <p>Chef Kang offers a sushi experience like no other – a friendly,
-            sincere and frankfurt sushi restaurant that will excite your taste
-            buds and passion for Japanese cuisine.</p></Col>
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi1.png"/></Col>
+          <Col xs={{span:12, order:2}} sm={{span:6, order:1}} className="col-contents-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum .</p>
+          </Col>
+          
+            <Col xs={{span:12, order:1}} sm={{span:6, order:2}} 
+              className="col-contents-photo"
+              style={{
+                // backgroundImage:"url('/sushi/plate/sushi1.png')"
+              }}>
+              <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi1.png"/>
+                <div className="col-contents-blur-effect">
+                </div>
+            </Col>
+
         </Row>
         
         <Row className="home-row">
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi2.png"/></Col>
-          <Col><p>Chef Kang will prepare your meal with all the finesse and pride of a
-            true sushi chef, while he takes care to ensure that every detail is
-            perfect to make your dining experience unforgettable.</p></Col>
+          <Col xs={{span:12, order:1}} sm={{span:6, order:1}} className="col-contents-photo">
+            <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi2.png"/>
+            <div className="col-contents-blur-effect">
+                </div>
+          </Col>
+          
+          <Col xs={{span:12, order:2}} sm={{span:6, order:2}} className="col-contents-text">
+            <p>Lorem ipsum doloquet, odio dolor laoreet magna, quis ullamcorper tellus ex at mauris. Morbi in posuere justo. Nullam sed egestas elit. Quisque accumsan, diam vitae tempor tincidunt, urna turpis ullamcorper sem, a.</p></Col>
         </Row>
         <Row className="home-row">
-          <Col><p>At Tokyoya Sushi, we want to offer our guests an amazing sushi
-            experience that will leave them genuinely passionate about sushi and
-            eager to come back again and again.</p></Col>
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi3.png"/></Col>
+          <Col xs={{span:12, order:2}} sm={{span:6, order:1}} className="col-contents-text">
+            <p>Lolor laoreet magna, quis ullamcorper tellus ex at mauris. Morbi in posuere justo. Nullam sed egestas elit. Quisque accumsan, diam vitae tempor tincidunt, urna turpis ullamcorper sem, a.</p></Col>
+        
+          <Col xs={{span:12, order:1}} sm={{span:6, order:2}} className="col-contents-photo">
+            <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi3.png"/>
+            <div className="col-contents-blur-effect"></div>
+            </Col>
         </Row>
 
         <Row className="home-row">
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi4.png"/></Col>
-          <Col><p>Japanese cuisine is one of the most widely-known cuisines in the
-          world. But, with so many different types of sushi, ramen, and other
-          dishes, how do you know where to start?</p></Col>
+          <Col xs={{span:12, order:1}} sm={{span:6, order:1}} className="col-contents-photo">
+            <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi4.png"/>
+            <div className="col-contents-blur-effect"></div>
+          </Col>
+        
+          <Col xs={{span:12, order:2}} sm={{span:6, order:2}} className="col-contents-text">
+            <p>Loreolor laoreet magna, quis ullamcorper tellus ex at mauris. Morbi in posuere justo. Nullam sed egestas elit. Quisque accumsan, diam vitae tempor tincidunt, urna turpis ullamcorper sem, a.</p></Col>
         </Row>
         <Row className="home-row">
-          <Col><p>Sushi is an art form in which rice, fish, or other ingredients are
-          arranged in a bite-size piece of seasoned rice. The best sushi in the world is fresh. It is made with the best
-          ingredients and is prepared by the best sushi chefs.</p></Col>
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi5.png"/></Col>
+          <Col xs={{span:12, order:2}} sm={{span:6, order:1}} className="col-contents-text">
+            <p>Lorer laoreet magna, quis ullamcorper tellus ex at mauris. Morbi in posuere justo. Nullam sed egestas elit. Quisque accumsan, diam vitae tempor tincidunt, urna turpis ullamcorper sem, a.</p></Col>
+     
+          <Col xs={{span:12, order:1}} sm={{span:6, order:2}} className="col-contents-photo">
+            <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi5.png"/>
+            <div className="col-contents-blur-effect"></div>
+          </Col>
         </Row>
         <Row className="home-row">
-          <Col><img className="home-sushi-picture" src="/sushi/plate/sushi6.png"/></Col>
-          <Col><p> The full-flavored broth takes hours of work. With just a few simple ingredients, you can enjoy a
-          beautifully-presented meal that is full of flavour. This is an original recipe for a delicious, full-flavored ramen soup.
-          It's perfect for a cold day. The taste is perfect for cold winter nights, but it is also simple
-          enough to make ahead for a quick lunch or dinner. The best ramen takes effort, but it's well worth it. For this recipe,
-        ramen is transformed into a rich, complex, and deeply satisfying meal.</p></Col>
+          <Col xs={{span:12, order:1}} sm={{span:6, order:1}} className="col-contents-photo">
+            <img className="home-sushi-picture img-fluid" src="/sushi/plate/sushi6.png"/>
+            <div className="col-contents-blur-effect"></div>
+            </Col>
+ 
+          <Col xs={{span:12, order:2}} sm={{span:6, order:2}} className="col-contents-text">
+            <p> Loquet, odio dolor laoreet magna, quis ullamcorper tellus ex at mauris. Morbi in posuere justo. Nullam sed egestas elit. Quisque accumsan, diam vitae tempor tincidunt, urna turpis ullamcorper sem, a.</p></Col>
         </Row>
       </Container>
       {/* <CarouselFade/> */}

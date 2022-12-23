@@ -11,19 +11,37 @@
   font-family: "Kalam", serif;
 }
 .home-sushi-picture{
-  width:100%;
-  height:50vh;
+  border-radius:7%;
 }
 
 
 .home-row{
   margin:20px 0px;
   /* transform:translateY(10px); */
-  opacity:0.1;
-  transition:all 1.5s ease-out;
+  opacity:0.05;
+  transition:all 3s ease-out;
 }
 .home-row.show{
   /* transform:translateY(0px); */
   transition:all 0.5s ease-in;
   opacity:1;
+}
+.row .col-contents-photo{
+  position: relative;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain; */
+}
+.row .col-contents-blur-effect{
+    position: absolute;
+    top: 0px;
+    -webkit-appearance: none;
+    box-shadow: inset 0px 0px 3px 3px white; 
+    -webkit-box-shadow: inset 0px 0px 3px 3px white; 
+  -moz-box-shadow: inset 0px 0px 3px 3px white; 
+    border-radius:6%;
+}
+.row .col-contents-text{
+  padding:1rem;
 }
