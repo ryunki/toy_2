@@ -3,22 +3,16 @@ import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import {Carousel} from 'react-bootstrap';
 
 import './Carousel.css'
-
+const imgUrl = [
+  "/sushi/plate/sushi1.png",
+  "/sushi/plate/sushi2.png",
+  "/sushi/plate/sushi3.png",
+  "/sushi/plate/sushi4.png",
+  "/sushi/plate/sushi5.png",
+  "/sushi/plate/sushi6.png"
+]
 function CarouselFade() {
-
-  // function handleScroll() {
-  //   if (ScrollY > 299) {
-  //     setScrollY(window.pageYOffset);
-  //     setScrollActive(true);
-  //   } else {
-  //     setScrollY(window.pageYOffset);
-  //     setScrollActive(false);
-  //   }
-  // }
-
   const [y, setY] = useState(0);
-  const [ScrollActive, setScrollActive] = useState(false);
-  // const ref = useRef<HTMLDivElement>("")
 
   function handleScroll() {
     setY(window.scrollY) //negative: makes image move slower upwards
@@ -34,35 +28,23 @@ function CarouselFade() {
       el.classList.toggle('show')
     })
   }
-
+  
   useEffect(()=>{
+    handleTextOverlay()
    window.addEventListener("scroll", handleScroll)
-   handleTextOverlay()
     return ()=>{
       window.removeEventListener("scroll", handleScroll)
-      // window.removeEventListener("load", handleTextOverlay)
     }
  },[])
-const imgUrl = [
-  // "/background.jpg",
-  // "/background2.jpg",
-  "/sushi/plate/sushi1.png",
-  "/sushi/plate/sushi2.png",
-  "/sushi/plate/sushi3.png",
-  "/sushi/plate/sushi4.png",
-  "/sushi/plate/sushi5.png",
-  "/sushi/plate/sushi6.png"
-]
 
   return (
     <>
     {/* <div className="d-block w-100 bg-picture"
         style={{backgroundImage: `url(${imgUrl[0]})`, backgroundPositionY:y}}/> */}
-    <Carousel fade interval={2000}>
+    <Carousel fade  interval={2000} >
       {imgUrl.map((item, idx)=>(
         <Carousel.Item key={idx} style={{display:"flex"}}>
-          
-          <img src={imgUrl[idx]}
+          <img src={item}
             className="bg-picture"
           />
           {/* <div

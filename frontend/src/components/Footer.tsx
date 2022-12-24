@@ -23,10 +23,10 @@ const Footer = () => {
             <div className="col-sm-4 col-md-3 item">
               <h3 className="title">Contact</h3>
               <ul>
-                <li>BTS Tokyoya Sushi & Bulgogi</li>
+                <li>Tokyoya Sushi & Bulgogi</li>
                 <li>Louisenstraße 115 61348 Bad Homburg before the heigh</li>
-                <li>soonwonkang@gmail.com</li>
-                <li>Tel: 0160 9822 7444</li>
+                <li>email@gmail.com</li>
+                <li>Tel: 123 4567 890</li>
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 item">
@@ -59,7 +59,7 @@ const Footer = () => {
               <a href="#">
                 <i className="bi bi-instagram"></i>
               </a>
-              <p className="copyright">Company Name © 2018</p>
+              <p className="copyright">Tokyoya © 2022</p>
             </div>
           </div>
         </footer>
