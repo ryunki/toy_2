@@ -37,7 +37,8 @@ const Home = () => {
     threshold:1, //100% of the element must be on the screen to trigger the "entries" function
     rootMargin: "", //this sets the margin limits of a container to diplay elements
   }
-  window.addEventListener('scroll', (event)=>{
+
+  window.addEventListener('scroll', (event)=>{ //without this line, intersectionObserver doesnt work
     const rows = document.querySelectorAll('.home-row')
     const observer = new IntersectionObserver((entries)=>{
           entries.forEach(entry=>{
@@ -51,8 +52,18 @@ const Home = () => {
       observer.observe(row)
     })
   })
+
+  window.addEventListener('load', (event)=>{ // when first loads page
+    const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
+    const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
+    Array.from(elemsAll).map((elem, idx)=>{
+      effectEl[idx].style.height = elem.clientHeight+"px"
+      effectEl[idx].style.width = elem.clientWidth+"px"
+    })
+  }) 
   
-  useEffect(()=>{
+//without useEffect, the blur effect wont work. because this needs to be applied after all pictures load
+  useEffect(()=>{ 
     const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
     const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
     const obs =  new ResizeObserver(changes => {
