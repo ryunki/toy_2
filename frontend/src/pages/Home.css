@@ -12,6 +12,10 @@
 }
 .home-sushi-picture{
   border-radius:7%;
+  box-shadow: 0px 0px 21px 2px black;
+    -webkit-box-shadow: 0px 0px 21px 2px black;
+    -moz-box-shadow:  0px 0px 21px 2px black;
+    /* border-radius:6%; */
 }
 
 
@@ -34,12 +38,12 @@
   background-size: contain; */
 }
 .row .col-contents-blur-effect{
-    position: absolute;
-    top: 0px;
-    box-shadow: inset 0px 0px 3px 3px white; 
-    -webkit-box-shadow: inset 0px 0px 3px 3px white; 
-  -moz-box-shadow: inset 0px 0px 3px 3px white; 
-    border-radius:6%;
+    /* position: absolute;
+    top: 0px; */
+    /* box-shadow: inset 0px 0px 6px 6px white; 
+    -webkit-box-shadow: inset 0px 0px 6px 6px white; 
+    -moz-box-shadow: inset 0px 0px 6px 6px white; 
+    border-radius:6%; */
 }
 .row .col-contents-text{
   padding:1rem;

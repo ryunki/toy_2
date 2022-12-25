@@ -53,29 +53,30 @@ const Home = () => {
     })
   })
 
-  window.addEventListener('load', (event)=>{ // when first loads page
-    const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
-    const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
-    Array.from(elemsAll).map((elem, idx)=>{
-      effectEl[idx].style.height = elem.clientHeight+"px"
-      effectEl[idx].style.width = elem.clientWidth+"px"
-    })
-  }) 
   
 //without useEffect, the blur effect wont work. because this needs to be applied after all pictures load
-  useEffect(()=>{ 
-    const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
-    const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
-    const obs =  new ResizeObserver(changes => {
-        changes.map((change,idx)=>{
-            effectEl[idx].style.height = change.contentRect.height+"px"
-            effectEl[idx].style.width = change.contentRect.width+"px"
-        })
-      })
-    elemsAll.forEach(elem=>{
-      obs.observe(elem)
-    })
-  },[])
+// useEffect(()=>{ 
+//   const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
+//     const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
+//     Array.from(elemsAll).map((elem, idx)=>{
+//       effectEl[idx].style.height = elem.clientHeight+"px"
+//       effectEl[idx].style.width = elem.clientWidth+"px"
+//     })
+// },[])
+// useEffect(()=>{
+//   const elemsAll = document.querySelectorAll<HTMLElement>('.home-sushi-picture') 
+//   const effectEl = document.querySelectorAll<HTMLElement>('.col-contents-blur-effect') 
+//   const obs =  new ResizeObserver(changes => {
+//       changes.map((change,idx)=>{
+//           effectEl[idx].style.height = change.contentRect.height+"px"
+//           effectEl[idx].style.width = change.contentRect.width+"px"
+//       })
+//     })
+//   elemsAll.forEach(elem=>{
+//     obs.observe(elem)
+//   })
+
+// },[])
 
   return (
     <>
@@ -98,8 +99,8 @@ const Home = () => {
                       // backgroundImage:"url('/sushi/plate/sushi1.png')"
                     }}>
                     <img className="home-sushi-picture img-fluid" src={item.imgUrl}/>
-                      <div className="col-contents-blur-effect">
-                      </div>
+                      {/* <div className="col-contents-blur-effect">
+                      </div> */}
                   </Col>
               </Row>  
             ) : (
@@ -114,8 +115,8 @@ const Home = () => {
                       // backgroundImage:"url('/sushi/plate/sushi1.png')"
                     }}>
                     <img className="home-sushi-picture img-fluid" src={item.imgUrl}/>
-                      <div className="col-contents-blur-effect">
-                      </div>
+                      {/* <div className="col-contents-blur-effect">
+                      </div> */}
                   </Col>
               </Row> 
               )
